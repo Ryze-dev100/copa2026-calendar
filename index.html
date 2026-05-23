@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Copa do Mundo 2026 | Calendário Completo</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    body {
+      min-height: 100vh;
+      color: #fff;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255,214,10,.30), transparent 28%),
+        radial-gradient(circle at 80% 10%, rgba(0,155,72,.35), transparent 30%),
+        linear-gradient(135deg, #03150b 0%, #062914 42%, #02070f 100%);
+      overflow-x: hidden;
+    }
+    .hero {
+      position: relative;
+      padding: 36px 22px 28px;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    .stadium {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(255,255,255,.10), transparent 28%),
+        repeating-radial-gradient(circle at center bottom, rgba(255,255,255,.08) 0 2px, transparent 3px 24px);
+      opacity: .45;
+      pointer-events: none;
+    }
+    .card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 32px;
+      padding: 30px 24px;
+      background: rgba(255,255,255,.10);
+      box-shadow: 0 24px 70px rgba(0,0,0,.45);
+      backdrop-filter: blur(16px);
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,214,10,.18);
+      color: #ffe873;
+      font-weight: 800;
+      letter-spacing: .4px;
+      margin-bottom: 18px;
+    }
+    h1 {
+      font-size: clamp(42px, 9vw, 78px);
+      line-height: .92;
+      letter-spacing: -2.5px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .gold {
+      color: #ffd60a;
+      text-shadow: 0 0 24px rgba(255,214,10,.35);
+    }
+    .green {
+      color: #26d366;
+    }
+    .subtitle {
+      font-size: clamp(18px, 4vw, 28px);
+      line-height: 1.35;
+      color: rgba(255,255,255,.88);
+      max-width: 760px;
+      margin-bottom: 26px;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 24px 0 26px;
+    }
+    .stat {
+      padding: 18px 12px;
+      border-radius: 20px;
+      background: rgba(255,255,255,.13);
+      border: 1px solid rgba(255,255,255,.14);
+      text-align: center;
+    }
+    .stat b {
+      display: block;
+      font-size: 24px;
+      color: #ffd60a;
+    }
+    .stat span {
+      font-size: 13px;
+      color: rgba(255,255,255,.78);
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .buttons {
+      display: grid;
+      gap: 14px;
+      margin-top: 14px;
+    }
+    a.button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      text-decoration: none;
+      color: #071609;
+      background: linear-gradient(135deg, #ffd60a, #fff3a6);
+      padding: 18px 20px;
+      border-radius: 20px;
+      font-size: 20px;
+      font-weight: 900;
+      box-shadow: 0 14px 28px rgba(255,214,10,.25);
+    }
+    a.button.secondary {
+      background: linear-gradient(135deg, #22c55e, #86efac);
+      color: #03150b;
+      box-shadow: 0 14px 28px rgba(34,197,94,.25);
+    }
+    a.button.light {
+      background: rgba(255,255,255,.14);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.22);
+      box-shadow: none;
+      font-size: 16px;
+    }
+    .steps {
+      margin-top: 22px;
+      display: grid;
+      gap: 12px;
+    }
+    .step {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: rgba(255,255,255,.86);
+      background: rgba(0,0,0,.18);
+      border-radius: 18px;
+      padding: 14px;
+    }
+    .num {
+      flex: 0 0 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #ffd60a;
+      color: #06150b;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+    }
+    .footer {
+      text-align: center;
+      color: rgba(255,255,255,.68);
+      font-size: 13px;
+      padding: 24px 12px 34px;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .warning {
+      margin-top: 18px;
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.11);
+      color: rgba(255,255,255,.82);
+      font-size: 14px;
+      line-height: 1.35;
+    }
+    @media (max-width: 620px) {
+      .stats { grid-template-columns: 1fr; }
+      .card { padding: 24px 18px; border-radius: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="stadium"></div>
+    <div class="card">
+      <div class="badge">⚽ CALENDÁRIO OFICIAL DO TIME</div>
+      <h1>Não perca <span class="gold">nenhum jogo</span> da <span class="green">Copa 2026</span></h1>
+      <p class="subtitle">Adicione os 104 jogos da Copa do Mundo 2026 direto no calendário do seu celular, com horário de Brasília e lembrete antes das partidas.</p>
+
+      <div class="stats">
+        <div class="stat"><b>104</b><span>jogos</span></div>
+        <div class="stat"><b>🇧🇷</b><span>horário de Brasília</span></div>
+        <div class="stat"><b>15min</b><span>lembrete</span></div>
+      </div>
+
+      <div class="buttons">
+        <a class="button" href="webcal://bat-my.sharepoint.com/:u:/p/71383694/IQBmQURHhXM6QKUn0cNJ_i9tAc8cxCmKHrv6YJXp3RzN-Bw?email=raphael.santos%40bat.com&amp;e=QorJiI&amp;download=1">🍎 Adicionar no iPhone</a>
+        <a class="button secondary" href="https://bat-my.sharepoint.com/:u:/p/71383694/IQBmQURHhXM6QKUn0cNJ_i9tAc8cxCmKHrv6YJXp3RzN-Bw?email=raphael.santos%40bat.com&amp;e=QorJiI&amp;download=1" target="_blank">🤖 Adicionar no Android</a>
+        <a class="button light" href="https://bat-my.sharepoint.com/:u:/p/71383694/IQBmQURHhXM6QKUn0cNJ_i9tAc8cxCmKHrv6YJXp3RzN-Bw?email=raphael.santos%40bat.com&amp;e=QorJiI&amp;download=1" target="_blank">⬇️ Baixar arquivo .ICS</a>
+      </div>
+
+      <div class="steps">
+        <div class="step"><div class="num">1</div><div><b>Toque no botão acima</b><br>Escolha iPhone ou Android.</div></div>
+        <div class="step"><div class="num">2</div><div><b>Confirme no calendário</b><br>No iPhone, toque em “Assinar” ou “Adicionar”.</div></div>
+        <div class="step"><div class="num">3</div><div><b>Pronto</b><br>Os jogos aparecerão automaticamente na sua agenda.</div></div>
+      </div>
+
+      <div class="warning">
+        Importante: se o link abrir uma tela de login ou preview do SharePoint, será necessário trocar por um link público de download direto do arquivo .ics.
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    Copa do Mundo 2026 • Calendário com todos os jogos • Horário de Brasília
+  </div>
+</body>
+</html>
