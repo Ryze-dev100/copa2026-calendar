@@ -1,432 +1,351 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Copa do Mundo 2026 | Calendário Completo</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    :root {
-      --gold: #d7b46a;
-      --gold-2: #f4d98b;
-      --black: #03050a;
-      --white: #ffffff;
-      --muted: #b8bfcc;
-      --glass: rgba(255,255,255,.08);
-      --border: rgba(255,255,255,.16);
-    }
+<title>Copa do Mundo 2026</title>
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style>
 
-    body {
-      font-family: Inter, Arial, Helvetica, sans-serif;
-      background: var(--black);
-      color: var(--white);
-      overflow-x: hidden;
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
 
-    .hero {
-      min-height: 100vh;
-      position: relative;
-      display: flex;
-      align-items: center;
-      padding: 32px 22px;
-      background:
-        radial-gradient(circle at 70% 20%, rgba(215,180,106,.38), transparent 30%),
-        radial-gradient(circle at 20% 80%, rgba(0,110,255,.22), transparent 32%),
-        linear-gradient(120deg, rgba(0,0,0,.92), rgba(3,5,10,.82), rgba(0,0,0,.95)),
-        url("https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=2200&q=90");
-      background-size: cover;
-      background-position: center;
-    }
+body{
+background:#02040a;
+color:white;
+overflow-x:hidden;
+}
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(to bottom, transparent 65%, #03050a 100%),
-        repeating-linear-gradient(90deg, rgba(255,255,255,.025) 0 1px, transparent 1px 80px);
-      pointer-events: none;
-    }
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:40px 20px;
+background:
+linear-gradient(rgba(0,0,0,.82),rgba(0,0,0,.88)),
+url('https://images.unsplash.com/photo-1547347298-4074fc3086f0?auto=format&fit=crop&w=1800&q=80');
+background-size:cover;
+background-position:center;
+}
 
-    .wrap {
-      width: 100%;
-      max-width: 1180px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 2;
-      display: grid;
-      grid-template-columns: 1.08fr .92fr;
-      gap: 44px;
-      align-items: center;
-    }
+.container{
+max-width:1200px;
+width:100%;
+display:grid;
+grid-template-columns:1.1fr .9fr;
+gap:50px;
+align-items:center;
+}
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 16px;
-      border: 1px solid rgba(215,180,106,.45);
-      border-radius: 999px;
-      color: var(--gold-2);
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 1.8px;
-      text-transform: uppercase;
-      margin-bottom: 26px;
-      background: rgba(0,0,0,.35);
-      backdrop-filter: blur(14px);
-    }
+.tag{
+display:inline-block;
+padding:10px 18px;
+border:1px solid rgba(255,255,255,.2);
+border-radius:999px;
+margin-bottom:25px;
+font-size:12px;
+letter-spacing:2px;
+font-weight:800;
+color:#d8b36a;
+text-transform:uppercase;
+backdrop-filter:blur(10px);
+background:rgba(255,255,255,.05);
+}
 
-    h1 {
-      font-size: clamp(48px, 8vw, 96px);
-      line-height: .88;
-      letter-spacing: -4px;
-      text-transform: uppercase;
-      font-weight: 950;
-      margin-bottom: 26px;
-    }
+h1{
+font-size:clamp(52px,8vw,100px);
+line-height:.9;
+font-weight:900;
+letter-spacing:-4px;
+text-transform:uppercase;
+margin-bottom:25px;
+}
 
-    h1 span {
-      background: linear-gradient(135deg, var(--gold-2), var(--gold));
-      -webkit-background-clip: text;
-      color: transparent;
-    }
+.gold{
+color:#d8b36a;
+}
 
-    .lead {
-      max-width: 640px;
-      color: #e7eaf0;
-      font-size: clamp(18px, 2vw, 23px);
-      line-height: 1.45;
-      margin-bottom: 34px;
-    }
+.subtitle{
+font-size:clamp(18px,2vw,24px);
+line-height:1.5;
+color:#d9dde5;
+margin-bottom:35px;
+max-width:620px;
+}
 
-    .mini-stats {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
+.stats{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+}
 
-    .mini {
-      min-width: 132px;
-      padding: 16px 18px;
-      border-radius: 18px;
-      background: rgba(255,255,255,.075);
-      border: 1px solid rgba(255,255,255,.14);
-      backdrop-filter: blur(16px);
-    }
+.stat{
+padding:18px 22px;
+border-radius:20px;
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.12);
+min-width:130px;
+backdrop-filter:blur(10px);
+}
 
-    .mini strong {
-      display: block;
-      font-size: 28px;
-      color: var(--gold-2);
-      line-height: 1;
-    }
+.stat strong{
+display:block;
+font-size:30px;
+color:#d8b36a;
+}
 
-    .mini small {
-      display: block;
-      margin-top: 7px;
-      color: var(--muted);
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-      font-weight: 800;
-    }
+.stat span{
+font-size:12px;
+letter-spacing:1px;
+text-transform:uppercase;
+color:#bfc7d4;
+}
 
-    .panel {
-      border-radius: 32px;
-      padding: 30px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.13), rgba(255,255,255,.045));
-      border: 1px solid rgba(255,255,255,.18);
-      box-shadow: 0 40px 110px rgba(0,0,0,.65);
-      backdrop-filter: blur(22px);
-      position: relative;
-      overflow: hidden;
-    }
+.card{
+padding:34px;
+border-radius:30px;
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.12);
+backdrop-filter:blur(20px);
+box-shadow:0 30px 80px rgba(0,0,0,.45);
+}
 
-    .panel::before {
-      content: "";
-      position: absolute;
-      top: -80px;
-      right: -80px;
-      width: 180px;
-      height: 180px;
-      background: radial-gradient(circle, rgba(244,217,139,.38), transparent 70%);
-    }
+.card h2{
+font-size:32px;
+margin-bottom:12px;
+}
 
-    .panel h2 {
-      font-size: 30px;
-      letter-spacing: -1px;
-      margin-bottom: 10px;
-      position: relative;
-    }
+.card p{
+color:#c9cfda;
+line-height:1.5;
+margin-bottom:25px;
+}
 
-    .panel p {
-      color: var(--muted);
-      line-height: 1.45;
-      margin-bottom: 24px;
-      position: relative;
-    }
+.btn{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 20px;
+margin-bottom:14px;
+border-radius:18px;
+text-decoration:none;
+font-weight:900;
+transition:.2s;
+}
 
-    .btn {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 14px;
-      width: 100%;
-      text-decoration: none;
-      padding: 18px 18px;
-      border-radius: 18px;
-      margin-bottom: 14px;
-      font-weight: 950;
-      transition: .22s ease;
-      position: relative;
-    }
+.btn:hover{
+transform:translateY(-2px);
+}
 
-    .btn:hover {
-      transform: translateY(-3px);
-      filter: brightness(1.08);
-    }
+.primary{
+background:linear-gradient(135deg,#f5dd9a,#c8993f);
+color:#050505;
+}
 
-    .btn-primary {
-      background: linear-gradient(135deg, var(--gold-2), var(--gold));
-      color: #080808;
-      box-shadow: 0 18px 45px rgba(215,180,106,.22);
-    }
+.secondary{
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.12);
+color:white;
+}
 
-    .btn-dark {
-      background: rgba(0,0,0,.32);
-      color: #fff;
-      border: 1px solid rgba(255,255,255,.18);
-    }
+.arrow{
+font-size:22px;
+opacity:.8;
+}
 
-    .arrow {
-      opacity: .75;
-      font-size: 20px;
-    }
+.footer{
+padding:30px;
+text-align:center;
+color:#7d8797;
+font-size:13px;
+border-top:1px solid rgba(255,255,255,.08);
+}
 
-    .trust {
-      margin-top: 18px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      position: relative;
-    }
+.features{
+padding:80px 20px;
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
 
-    .trust div {
-      text-align: center;
-      padding: 12px 8px;
-      border-radius: 14px;
-      background: rgba(255,255,255,.06);
-      color: #cfd4df;
-      font-size: 12px;
-      font-weight: 800;
-    }
+.feature{
+padding:26px;
+border-radius:24px;
+background:#080b12;
+border:1px solid rgba(255,255,255,.08);
+}
 
-    .section {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 64px 22px;
-    }
+.feature h3{
+margin-bottom:10px;
+color:#d8b36a;
+}
 
-    .section-title {
-      font-size: clamp(30px, 4vw, 52px);
-      line-height: 1;
-      letter-spacing: -2px;
-      text-transform: uppercase;
-      margin-bottom: 28px;
-    }
+.feature p{
+color:#bcc5d3;
+line-height:1.5;
+font-size:14px;
+}
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
+@media(max-width:900px){
 
-    .card {
-      background: #080b14;
-      border: 1px solid rgba(255,255,255,.10);
-      border-radius: 24px;
-      padding: 24px;
-      min-height: 170px;
-    }
+.container{
+grid-template-columns:1fr;
+}
 
-    .card span {
-      font-size: 30px;
-      display: block;
-      margin-bottom: 16px;
-    }
+.features{
+grid-template-columns:1fr 1fr;
+}
 
-    .card strong {
-      display: block;
-      font-size: 18px;
-      color: var(--gold-2);
-      margin-bottom: 8px;
-    }
+}
 
-    .card p {
-      color: var(--muted);
-      line-height: 1.45;
-      font-size: 14px;
-    }
+@media(max-width:600px){
 
-    footer {
-      padding: 34px 22px;
-      text-align: center;
-      color: #7f8796;
-      border-top: 1px solid rgba(255,255,255,.08);
-      font-size: 13px;
-    }
+.features{
+grid-template-columns:1fr;
+}
 
-    @media (max-width: 900px) {
-      .wrap {
-        grid-template-columns: 1fr;
-      }
+h1{
+letter-spacing:-2px;
+}
 
-      .cards {
-        grid-template-columns: 1fr 1fr;
-      }
+}
 
-      .hero {
-        padding-top: 46px;
-      }
-    }
-
-    @media (max-width: 560px) {
-      h1 {
-        letter-spacing: -2px;
-      }
-
-      .panel {
-        padding: 24px;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      .trust {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+</style>
 </head>
 
 <body>
 
-  <main class="hero">
-    <div class="wrap">
+<section class="hero">
 
-      <section>
-        <div class="eyebrow">🌎 World Cup 2026 Calendar</div>
+<div class="container">
 
-        <h1>
-          A Copa<br>
-          no seu<br>
-          <span>calendário</span>
-        </h1>
+<div>
 
-        <p class="lead">
-          Todos os jogos da Copa do Mundo 2026 organizados em uma experiência simples,
-          premium e pronta para adicionar no Google Calendar, Outlook, Apple Calendar ou celular.
-        </p>
+<div class="tag">
+FIFA WORLD CUP 2026
+</div>
 
-        <div class="mini-stats">
-          <div class="mini">
-            <strong>104</strong>
-            <small>Jogos</small>
-          </div>
-          <div class="mini">
-            <strong>48</strong>
-            <small>Seleções</small>
-          </div>
-          <div class="mini">
-            <strong>3</strong>
-            <small>Países-sede</small>
-          </div>
-        </div>
-      </section>
+<h1>
+A COPA<br>
+NO SEU<br>
+<span class="gold">CALENDÁRIO</span>
+</h1>
 
-      <aside class="panel">
-        <h2>Escolha seu calendário</h2>
-        <p>
-          Clique na opção ideal para o seu dispositivo. O arquivo é compatível com os principais aplicativos de agenda.
-        </p>
+<p class="subtitle">
+Todos os jogos da Copa do Mundo 2026 organizados automaticamente no seu celular, Google Calendar, Outlook ou Apple Calendar.
+</p>
 
-        <a class="btn btn-primary"
-           href="webcal://ryze-dev100.github.io/copa2026-calendar/Copa%20do%20Mundo%202026%202.ics">
-          <span>Adicionar automaticamente</span>
-          <span class="arrow">→</span>
-        </a>
+<div class="stats">
 
-        <a class="btn btn-dark"
-           href="https://calendar.google.com/calendar/render?cid=https://ryze-dev100.github.io/copa2026-calendar/Copa%20do%20Mundo%202026%202.ics"
-           target="_blank">
-          <span>Google Calendar</span>
-          <span class="arrow">→</span>
-        </a>
+<div class="stat">
+<strong>104</strong>
+<span>Jogos</span>
+</div>
 
-        <a class="btn btn-dark"
-           href="webcal://ryze-dev100.github.io/copa2026-calendar/Copa%20do%20Mundo%202026%202.ics">
-          <span>Apple Calendar / iPhone</span>
-          <span class="arrow">→</span>
-        </a>
+<div class="stat">
+<strong>48</strong>
+<span>Seleções</span>
+</div>
 
-        <a class="btn btn-dark"
-           href="https://ryze-dev100.github.io/copa2026-calendar/Copa%20do%20Mundo%202026%202.ics">
-          <span>Baixar arquivo .ICS</span>
-          <span class="arrow">↓</span>
-        </a>
+<div class="stat">
+<strong>3</strong>
+<span>Países</span>
+</div>
 
-        <div class="trust">
-          <div>iPhone</div>
-          <div>Android</div>
-          <div>Outlook</div>
-        </div>
-      </aside>
+</div>
 
-    </div>
-  </main>
+</div>
 
-  <section class="section">
-    <h2 class="section-title">Feito para não perder nenhum jogo</h2>
+<div class="card">
 
-    <div class="cards">
-      <div class="card">
-        <span>⚽</span>
-        <strong>Todos os jogos</strong>
-        <p>A agenda completa da Copa 2026 em um único calendário.</p>
-      </div>
+<h2>Adicionar calendário</h2>
 
-      <div class="card">
-        <span>📲</span>
-        <strong>Um clique</strong>
-        <p>Adicione direto no celular ou no aplicativo de calendário preferido.</p>
-      </div>
+<p>
+Escolha a plataforma abaixo e acompanhe todos os jogos da Copa 2026 automaticamente.
+</p>
 
-      <div class="card">
-        <span>🌎</span>
-        <strong>Maior Copa da história</strong>
-        <p>48 seleções, 104 jogos e três países-sede.</p>
-      </div>
+<a class="btn primary"
+href="webcal://ryze-dev100.github.io/copa2026-calendar/Copa%20do%20Mundo%202026%202.ics">
 
-      <div class="card">
-        <span>🏆</span>
-        <strong>Experiência premium</strong>
-        <p>Landing page clara, visual forte e navegação simples.</p>
-      </div>
-    </div>
-  </section>
+<span>Adicionar automaticamente</span>
+<span class="arrow">→</span>
 
-  <footer>
-    Copa do Mundo 2026 • Calendário personalizado
-  </footer>
+</a>
+
+<a class="btn secondary"
+target="_blank"
+href="https://calendar.google.com/calendar/render?cid=https://ryze-dev100.github.io/copa2026-calendar/Copa%20do%20Mundo%202026%202.ics">
+
+<span>Google Calendar</span>
+<span class="arrow">→</span>
+
+</a>
+
+<a class="btn secondary"
+href="webcal://ryze-dev100.github.io/copa2026-calendar/Copa%20do%20Mundo%202026%202.ics">
+
+<span>Apple Calendar / iPhone</span>
+<span class="arrow">→</span>
+
+</a>
+
+<a class="btn secondary"
+href="https://ryze-dev100.github.io/copa2026-calendar/Copa%20do%20Mundo%202026%202.ics">
+
+<span>Baixar arquivo .ICS</span>
+<span class="arrow">↓</span>
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="features">
+
+<div class="feature">
+<h3>Todos os jogos</h3>
+<p>
+Calendário completo da Copa do Mundo 2026.
+</p>
+</div>
+
+<div class="feature">
+<h3>1 clique</h3>
+<p>
+Adicione automaticamente no celular.
+</p>
+</div>
+
+<div class="feature">
+<h3>Compatível</h3>
+<p>
+Funciona em Google, Outlook e Apple Calendar.
+</p>
+</div>
+
+<div class="feature">
+<h3>Experiência premium</h3>
+<p>
+Visual inspirado em campanhas FIFA, Nike e adidas.
+</p>
+</div>
+
+</section>
+
+<div class="footer">
+Copa do Mundo 2026 • Calendário personalizado
+</div>
 
 </body>
 </html>
